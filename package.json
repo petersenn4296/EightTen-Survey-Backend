@@ -1,0 +1,26 @@
+{
+  "name": "EightTen-Survey-Backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petersenn4296/EightTen-Survey-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petersenn4296/EightTen-Survey-Backend/issues"
+  },
+  "homepage": "https://github.com/petersenn4296/EightTen-Survey-Backend#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "pg": "^7.4.3"
+  }
+}
