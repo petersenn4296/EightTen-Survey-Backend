@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.integer('trait_id').unsigned().index().references('id').inTable('traits').onDelete('CASCADE')
     table.string('question').unique().notNullable().defaultTo('')
     table.boolean('multiple_choice')
+    table.timestamps(true, true)
   })
 };
 
