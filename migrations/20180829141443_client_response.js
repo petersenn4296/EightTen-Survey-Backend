@@ -2,9 +2,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('client_response', function(table) {
     table.increments().notNullable()
-    table.integer('client_id').unsigned().index().references('id').inTable('client').onDelete('CASCADE')
-    table.integer('question_id').unsigned().index().references('id').inTable('questions').onDelete('CASCADE')
-    table.integer('possible_answers_id').unsigned().index().references('id').inTable('possible_answers').onDelete('CASCADE')
+    table.integer('client_id').unsigned().index().references('id').inTable('client')
+    table.integer('question_id').unsigned().index().references('id').inTable('questions')
+    table.string('answer').notNullable().defaultTo('')
     table.timestamps(true, true)
   })
 };

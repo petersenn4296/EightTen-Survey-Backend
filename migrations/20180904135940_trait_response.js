@@ -2,7 +2,6 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('trait_response', function(table) {
     table.increments().notNullable()
     table.integer('trait_id').unsigned().index().references('id').inTable('traits').onDelete('CASCADE')
-    table.string('value').unique().notNullable().defaultTo('')
     table.string('response').notNullable().defaultTo('')
     table.timestamps(true, true)
   })

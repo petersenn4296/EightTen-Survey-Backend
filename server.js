@@ -4,6 +4,9 @@ let knex = require('./knex')
 let bodyParser = require('body-parser')
 
 let client = require('./routes/client');
+let survey = require('./routes/survey');
+let traits = require('./routes/traits');
+let users = require('./routes/users');
 
 app.get('/', function(req, res, next) {
   res.send('Hello there, this is the EightTen survey app')
