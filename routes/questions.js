@@ -3,14 +3,12 @@
 const express = require('express');
 const knex = require('../knex')
 const router = express.Router();
-const controllerz = require('../controller/client.js')
+const controllerz = require('../controller/questions.js')
 
 
 
-router.get('/', controllerz.getAll)//get all clients
-router.get('/:id', controllerz.getOne)
-router.get('/:id/responses', controllerz.getResults)
-router.patch('/:id', controllerz.isViewed)
+router.get('/', controllerz.getAll)
+// router.get('/:id', controllerz.getOne)
 // router.post('/', controllerz.makeOne)
 // router.patch('/:id', controllerz.editOne)
 // router.delete('/:id', controllerz.deleteOne)
