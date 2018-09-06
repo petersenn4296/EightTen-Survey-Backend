@@ -14,10 +14,44 @@ function getOne(id) {
 //(Admin) get survey results for each client
 function getResults(id){
   return knex
-  .select('question_id', 'client_id', 'answer')
+  .select('question_id', 'client_response.client_id', 'question', 'answer', 'questions.type')
   .from('client_response')
   .where('client_id', id)
-  .innerJoin('users', 'client_response.client_id', 'users.id')
+  .join('users', 'client_response.client_id', 'users.id')
+  .join('questions', 'client_response.question_id', 'questions.id')
+    .then((data) => {
+      let mc = data.filter(response => {
+        if(response.type === 'mc'){
+          return response
+        }
+      })
+      data = data.filter(response => {
+        if(response.type !== 'mc'){
+          return response
+        }
+      })
+
+      if(mc) {
+        mc = mc.map(response => {
+          return knex
+          .select('value')
+          .from('multiple_choice')
+          .where({'question_id': response.question_id, 'multiple_choice.answer': response.answer})
+            .then((data)=>{
+              response.score = data[0].value
+            })
+        })
+      }
+
+      if(data){
+        data = data.map(response => {
+          if(response.type === 'scale'){
+            response.score = response.answer
+          }
+          return response
+        })
+      }
+    })
 }
 
 function isViewed(id, view){
