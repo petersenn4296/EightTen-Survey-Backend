@@ -3,11 +3,11 @@
 const express = require('express');
 const knex = require('../knex')
 const router = express.Router();
-const controllerz = require('../controller/client.js')
+const controllerz = require('../controller/users.js')
 
 
 
-router.get('/', controllerz.getAll)//get all clients
+router.get('/', controllerz.getAll)//get all users info
 router.get('/:id', controllerz.getOne)
 router.get('/:id/responses', controllerz.getResults)
 router.patch('/:id', controllerz.isViewed)

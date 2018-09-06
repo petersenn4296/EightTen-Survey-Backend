@@ -2,12 +2,12 @@ const knex = require('../knex.js')
 
 //(Admin) get all users
 function getAll() {
-  return knex('client')
+  return knex('users')
 }
 
 //(Admin) get 1 users by id
 function getOne(id) {
-  return knex('client')
+  return knex('users')
   .where('id', id)
 }
 
@@ -17,11 +17,11 @@ function getResults(id){
   .select('question_id', 'client_id', 'answer')
   .from('client_response')
   .where('client_id', id)
-  .innerJoin('client', 'client_response.client_id', 'client.id')
+  .innerJoin('users', 'client_response.client_id', 'users.id')
 }
 
 function isViewed(id, view){
-  return knex('client')
+  return knex('users')
   .where('id', id)
   .update({'is_viewed': view})
 }

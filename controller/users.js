@@ -1,4 +1,4 @@
-const model = require('../model/client.js')
+const model = require('../model/users.js')
 
 //(Admin) get all users
 function getAll(req, res, next) {
