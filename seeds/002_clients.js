@@ -1,6 +1,6 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('client').insert([
+  return knex('clients').insert([
     {
     email: 'bill.gates@microsoft.com',
     password: '123',
@@ -27,6 +27,6 @@ exports.seed = function(knex, Promise) {
     }
   ])
   .then(() => {
-    return knex.raw("SELECT setval('client_id_seq', (SELECT MAX(id) FROM client))")
+    return knex.raw("SELECT setval('client_id_seq', (SELECT MAX(id) FROM clients))")
   });
 };

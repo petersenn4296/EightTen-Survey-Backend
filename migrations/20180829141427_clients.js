@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('client', function(table) {
+  return knex.schema.createTable('clients', function(table) {
     table.increments().notNullable()
     table.string('email').notNullable().defaultTo('')
     table.string('password').notNullable().defaultTo('')//hash
@@ -17,5 +17,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('client').onDelete('CASCADE')
+  return knex.schema.dropTable('clients').onDelete('CASCADE')
 };
