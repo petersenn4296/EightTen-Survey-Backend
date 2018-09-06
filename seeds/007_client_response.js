@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     {client_id: 1, question_id: 2, answer: 'text response to question 2'},
     {client_id: 1, question_id: 3, answer: 'sometimes'},
     {client_id: 1, question_id: 4, answer: 'true'},
-    {client_id: 1, question_id: 5, answer: '3'},    
+    {client_id: 1, question_id: 5, answer: '3'},
     {client_id: 2, question_id: 1, answer: '3'},
     {client_id: 2, question_id: 2, answer: 'text response to question 2'},
     {client_id: 2, question_id: 3, answer: 'never'},

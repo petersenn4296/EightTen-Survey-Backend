@@ -1,12 +1,12 @@
 const model = require('../model/login.js')
 
 function logIn(req, res, next) {
-  const username = req.body.username
+  const email = req.body.email
   const password = req.body.password
-  if(!username || !password) {
-    res.status(400).json({errorMessage: 'Please enter username and password.'})
+  if(!email || !password) {
+    res.status(400).json({errorMessage: 'Please enter email and password.'})
   } else {
-    model.logIn(username, password)
+    model.logIn(email, password)
       .then(result => {
         if(result.errorMessage) {
           res.status(400).json(result.errorMessage)
