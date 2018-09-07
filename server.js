@@ -9,8 +9,6 @@ let questions = require('./routes/questions')
 let traits = require('./routes/traits')
 let login = require('./routes/login')
 
-
-
 app.get('/', function(req, res, next) {
   res.send('Hello there, this is the EightTen survey app')
 })
