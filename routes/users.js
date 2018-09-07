@@ -11,7 +11,7 @@ router.get('/', controllerz.getAll)//get all users info
 router.get('/:id', controllerz.getOne)
 router.get('/:id/responses', controllerz.getResults)
 router.patch('/:id', controllerz.isViewed)
-// router.post('/', controllerz.makeOne)
+router.post('/', controllerz.signUp)
 // router.patch('/:id', controllerz.editOne)
 // router.delete('/:id', controllerz.deleteOne)
 

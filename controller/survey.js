@@ -7,7 +7,15 @@ function getAll(req, res, next) {
   })
 }
 
+function getOne(req, res, next) {
+  model.getOne(req.params.id)
+  .then(data => {
+    res.json(data)
+  })
+}
+
 
 module.exports = {
-  getAll
+  getAll,
+  getOne
 }

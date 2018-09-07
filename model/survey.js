@@ -5,4 +5,13 @@ function getAll() {
   return knex('survey')
 }
 
-module.exports = {getAll}
+function getOne(id) {
+  return knex('survey')
+    .where('id', id)
+
+}
+
+module.exports = {
+  getAll,
+  getOne
+}
