@@ -1,17 +1,14 @@
 const knex = require('../knex.js')
 
-//(Admin) get all users
 function getAll() {
   return knex('users')
 }
 
-//(Admin) get 1 users by id
 function getOne(id) {
   return knex('users')
   .where('id', id)
 }
 
-//(Admin) get survey results for each client
 function getResults(id){
   return knex
   .select('question', 'answer', 'client_response.score', 'questions.trait_id')
@@ -29,7 +26,8 @@ function isViewed(id, view){
   .where('id', id)
   .update({'is_viewed': view})
 }
-//
+
+
 function signUp(first_name, last_name, title, company_name, size, location, email, tel, password) {
   return knex('users')
   .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": password})

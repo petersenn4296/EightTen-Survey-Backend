@@ -3,15 +3,15 @@
 const express = require('express');
 const knex = require('../knex')
 const router = express.Router();
-const controllerz = require('../controller/survey.js')
+const controller = require('../controller/survey.js')
 
 
 
-router.get('/', controllerz.getAll)
-router.get('/:id', controllerz.getOne) // Retrieve all data about a particular survey
-// router.post('/', controllerz.makeOne)
-// router.patch('/:id', controllerz.editOne)
-// router.delete('/:id', controllerz.deleteOne)
+router.get('/', controller.getAll) // Returns list of all surveys
+router.get('/:survey_id', controller.getOne) // Retrieve all questions for a particular survey
+// router.post('/', controller.addQuestion)
+// router.patch('/:id', controller.editOne)
+// router.delete('/:id', controller.deleteOne)
 
 
 module.exports = router;

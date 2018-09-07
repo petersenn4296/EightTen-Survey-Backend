@@ -1,6 +1,5 @@
 const model = require('../model/users.js')
 
-//(Admin) get all users
 function getAll(req, res, next) {
   model.getAll()
   .then(data => {
@@ -8,7 +7,6 @@ function getAll(req, res, next) {
   })
 }
 
-//(Admin) get 1 users by id
 function getOne(req, res, next) {
   model.getOne(req.params.id)
   .then(data => {
@@ -20,7 +18,6 @@ function getOne(req, res, next) {
   })
 }
 
-//(Admin) get survey results for each client
 function getResults(req, res, next){
   model.getResults(req.params.id)
   .then(data => {
@@ -34,7 +31,7 @@ function isViewed(req, res, next){
     res.json(data)
   })
 }
-//
+
 function signUp(req, res, next) {
   model.signUp(req.body.first_name, req.body.last_name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.password)
   .then(data => {
