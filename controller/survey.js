@@ -8,12 +8,11 @@ function getAll(req, res, next) {
 }
 
 function getOne(req, res, next) {
-  model.getOne(req.params.id)
+  model.getOne(req.params.survey_id)
   .then(data => {
     res.json(data)
   })
 }
-
 
 module.exports = {
   getAll,

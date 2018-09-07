@@ -8,7 +8,7 @@ function getAll(req, res, next) {
 }
 
 function editOne(req, res, next) {
-  model.editOne(req.params.id, req.body.name, req.body.response, req.body.trait_response_id)
+  model.editOne(req.params.trait_id, req.body.name, req.body.response, req.body.trait_response_id)
   .then((data) => {
     res.send(data)
   })
