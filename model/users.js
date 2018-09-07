@@ -14,10 +14,14 @@ function getOne(id) {
 //(Admin) get survey results for each client
 function getResults(id){
   return knex
-  .select('question_id', 'client_id', 'answer')
+  .select('question', 'answer', 'client_response.score', 'questions.trait_id')
   .from('client_response')
   .where('client_id', id)
-  .innerJoin('users', 'client_response.client_id', 'users.id')
+  .join('users', 'client_response.client_id', 'users.id')
+  .join('questions', 'client_response.question_id', 'questions.id')
+    .then((data) => {
+      return data
+    })
 }
 
 function isViewed(id, view){
@@ -26,11 +30,11 @@ function isViewed(id, view){
   .update({'is_viewed': view})
 }
 //
-// function makeOne(name, title, company_name, size, location, email, tel, pin) {
-//   return knex('client')
-//   .insert({"name": name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "pin": pin})
-//   .returning('*')
-// }
+function signUp(first_name, last_name, title, company_name, size, location, email, tel, password) {
+  return knex('users')
+  .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": password})
+  .returning('*')
+}
 //
 // function editOne(id, name, title, company_name, size, location, email, tel, pin) {
 //   return knex('client')
@@ -60,8 +64,8 @@ module.exports = {
   getAll,
   getOne,
   getResults,
-  isViewed
-  // makeOne,
+  isViewed,
+  signUp,
   // editOne,
   // deleteOne
 }

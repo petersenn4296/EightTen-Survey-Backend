@@ -11,8 +11,8 @@ exports.up = function(knex, Promise) {
     table.string('company_name').notNullable().defaultTo('')
     table.integer('size').unsigned().index().defaultTo(0)
     table.string('location').notNullable().defaultTo('')
-    table.boolean('is_viewed').notNullable()
-    table.boolean('is_admin').notNullable()
+    table.boolean('is_viewed').notNullable().defaultTo(false)
+    table.boolean('is_admin').notNullable().defaultTo(false)
     table.timestamps(true, true)
   })
 };
