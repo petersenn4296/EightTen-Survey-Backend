@@ -35,12 +35,12 @@ function isViewed(req, res, next){
   })
 }
 //
-// function makeOne(req, res, next) {
-//   model.makeOne(req.body.name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.pin)
-//   .then(data => {
-//     res.json(data[0])
-//   })
-// }
+function signUp(req, res, next) {
+  model.signUp(req.body.first_name, req.body.last_name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.password)
+  .then(data => {
+    res.json(data[0])
+  })
+}
 //
 // function editOne(req, res, next) {
 //   console.log('req body id', req.body.id);
@@ -67,8 +67,8 @@ module.exports = {
   getAll,
   getOne,
   getResults,
-  isViewed
-  // makeOne,
+  isViewed,
+  signUp,
   // editOne,
   // deleteOne
 }

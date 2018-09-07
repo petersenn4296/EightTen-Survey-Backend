@@ -8,6 +8,7 @@ let survey = require('./routes/survey')
 let questions = require('./routes/questions')
 let traits = require('./routes/traits')
 let login = require('./routes/login')
+let client_response = require('./routes/client_response')
 
 
 
@@ -24,6 +25,7 @@ app.use('/survey', survey)
 app.use('/questions', questions)
 app.use('/traits', traits)
 app.use('/login', login)
+app.use('/client_response', client_response)
 
 
 let port = process.env.PORT || 3000
