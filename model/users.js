@@ -14,10 +14,14 @@ function getOne(id) {
 //(Admin) get survey results for each client
 function getResults(id){
   return knex
-  .select('question_id', 'client_id', 'answer')
+  .select('question', 'answer', 'client_response.score')
   .from('client_response')
   .where('client_id', id)
-  .innerJoin('users', 'client_response.client_id', 'users.id')
+  .join('users', 'client_response.client_id', 'users.id')
+  .join('questions', 'client_response.question_id', 'questions.id')
+    .then((data) => {
+      return data
+    })
 }
 
 function isViewed(id, view){

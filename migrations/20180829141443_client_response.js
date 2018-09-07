@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.integer('client_id').unsigned().index().references('id').inTable('users')
     table.integer('question_id').unsigned().index().references('id').inTable('questions')
     table.string('answer').notNullable().defaultTo('')
+    table.integer('score').defaultTo(0)
     table.timestamps(true, true)
   })
 };
