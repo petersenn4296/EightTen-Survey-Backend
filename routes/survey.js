@@ -8,7 +8,7 @@ const controllerz = require('../controller/survey.js')
 
 
 router.get('/', controllerz.getAll)
-router.get('/:id', controllerz.getOne)
+router.get('/:id', controllerz.getOne) // Retrieve all data about a particular survey
 // router.post('/', controllerz.makeOne)
 // router.patch('/:id', controllerz.editOne)
 // router.delete('/:id', controllerz.deleteOne)

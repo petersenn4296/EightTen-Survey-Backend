@@ -7,8 +7,9 @@ function getAll() {
 
 function getOne(id) {
   return knex('survey')
-    .where('id', id)
-
+    .where('survey.id', id)
+    .join('questions', 'survey.id', 'questions.survey_id')
+    .select('survey.name', 'survey.is_live', 'questions.question', 'questions.type', 'questions.nested_question', 'questions.is_archived', 'questions.id as question_id')
 }
 
 module.exports = {
