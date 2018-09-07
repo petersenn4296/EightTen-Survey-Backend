@@ -11,6 +11,12 @@ let login = require('./routes/login')
 let client_response = require('./routes/client_response')
 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PATCH,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/', function(req, res, next) {
   res.send('Hello there, this is the EightTen survey app')
