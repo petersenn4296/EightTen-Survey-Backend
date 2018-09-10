@@ -2,7 +2,7 @@ const knex = require('../knex.js')
 
 function getAll() {
   return knex
-    .select('traits.id', 'trait', 'response')
+    .select('trait_response.id', 'trait', 'response')
     .from('traits')
     .innerJoin('trait_response', 'traits.id', 'trait_response.trait_id')
 }

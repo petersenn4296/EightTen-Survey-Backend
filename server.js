@@ -10,7 +10,6 @@ let traits = require('./routes/traits')
 let login = require('./routes/login')
 let client_response = require('./routes/client_response')
 
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PATCH,PUT");
