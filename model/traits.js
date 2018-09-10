@@ -3,7 +3,7 @@ const knex = require('../knex.js')
 //(Admin) get all traits and responses for admin
 function getAll() {
   return knex
-    .select('traits.id', 'trait', 'response')
+    .select('trait_response.id', 'trait', 'response')
     .from('traits')
     .innerJoin('trait_response', 'traits.id', 'trait_response.trait_id')
 }
