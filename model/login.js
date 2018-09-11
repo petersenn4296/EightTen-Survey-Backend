@@ -9,7 +9,7 @@ function logIn(email, password) {
     .where('email', email)
     .then(result => {
       if(result.length !== 1) {
-        errorMessage.push('Incorrect username.')
+        errorMessage.push('Incorrect username or password.')
         response = { errorMessage }
       } else if (bcrypt.compareSync(password, result[0].password)) {
         const user = {
@@ -18,7 +18,7 @@ function logIn(email, password) {
         }
         response = user
       } else {
-        errorMessage.push('Incorrect password.')
+        errorMessage.push('Incorrect username or password.')
         response = { errorMessage }
       }
       return response
