@@ -22,7 +22,7 @@ function addQuestion(req, res, next) {
 }
 
 function editQuestion(req, res, next) {
-  model.editQuestion(req.params.question_id, req.body.question, req.body.trait_id, req.body.type, req.body.nested_question)
+  model.editQuestion(req.params.question_id, req.body.question, req.body.trait_id, req.body.type, req.body.nested_question, req.body.value)
     .then(data => {
       res.json(data)
     })
