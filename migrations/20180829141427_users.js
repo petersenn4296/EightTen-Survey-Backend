@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
     table.string('password').notNullable().defaultTo('')//hash
     table.string('first_name').notNullable().defaultTo('')
     table.string('last_name').notNullable().defaultTo('')
-    table.bigInteger('tel', 12)
+    table.bigInteger('tel', 12).notNullable().defaultTo(0)
     table.string('title').notNullable().defaultTo('')
     table.string('company_name').notNullable().defaultTo('')
     table.integer('size').unsigned().index().defaultTo(0)
