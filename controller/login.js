@@ -4,7 +4,7 @@ function logIn(req, res, next) {
   const email = req.body.email
   const password = req.body.password
   if(!email || !password) {
-    res.status(400).json({errorMessage: 'Please enter email and password.'})
+    res.status(404).json({errorMessage: 'Please enter email and password.'})
   } else {
     model.logIn(email, password)
       .then(result => {
