@@ -15,7 +15,6 @@ function getOneQuestion(req, res, next) {
 }
 
 function addQuestion(req, res, next) {
-  console.log('here');
   model.addQuestion(req.body.survey_id, req.body.question, req.body.trait_id, req.body.type, req.body.nested_question)
     .then(data => {
       res.json(data[0].id)
