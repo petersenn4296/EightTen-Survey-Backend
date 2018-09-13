@@ -5,7 +5,7 @@ function logIn(email, password) {
   let response
   let errorMessage
   return knex('users')
-    .select('email', 'password', 'is_admin', 'first_name')
+    .select('email', 'password', 'is_admin', 'first_name', 'id')
     .where('email', email)
     .then(result => {
       if(result.length !== 1) {
