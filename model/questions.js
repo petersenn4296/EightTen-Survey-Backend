@@ -46,11 +46,24 @@ function deleteQuestion(question_id) {
     .del()
 }
 
+function getClientQuestions(client_id) {
+  console.log('model', client_id);
+  return knex('client_response')
+    .select('question_id')
+    .where('client_id', client_id)
+    .returning('*')
+    .then(data => {
+      return data
+    })
+
+}
+
 module.exports = {
   getAll,
   getOneQuestion,
   getByTraitId,
   addQuestion,
   editQuestion,
-  deleteQuestion
+  deleteQuestion,
+  getClientQuestions
 }

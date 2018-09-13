@@ -43,11 +43,20 @@ function deleteQuestion(req, res, next) {
     })
 }
 
+function getClientQuestions(req, res, next) {
+  console.log('controller', req.params);
+  model.getClientQuestions(req.params.client_id)
+    .then(data => {
+      res.json(data)
+    })
+}
+
 module.exports = {
   getAll,
   getOneQuestion,
   getByTraitId,
   addQuestion,
   editQuestion,
-  deleteQuestion
+  deleteQuestion,
+  getClientQuestions
 }

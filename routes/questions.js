@@ -10,6 +10,7 @@ router.post('/', controller.addQuestion) // Inserts a new question into a partic
 router.patch('/:question_id', controller.editQuestion) // Edits an existing question for a particular survey.
 router.delete('/:question_id', controller.deleteQuestion) // Delete an existing question by question_id.
 router.get('/trait_id/:trait_id', controller.getByTraitId) // Returns all questions and associated question data.
+router.get('/client_id/:client_id', controller.getClientQuestions) // Returns questions that have not already been answered by a particular client.
 
 
 
