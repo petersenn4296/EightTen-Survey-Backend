@@ -9,7 +9,7 @@ function logIn(req, res, next) {
     model.logIn(email, password)
       .then(result => {
         if(result.errorMessage) {
-          res.status(400).json(result.errorMessage)
+          res.status(404).json({ errorMessage: result.errorMessage})
         } else {
           res.status(200).json(result)
         }
