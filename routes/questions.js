@@ -9,6 +9,8 @@ router.get('/:id', controller.getOneQuestion) // Returns a specific question and
 router.post('/', controller.addQuestion) // Inserts a new question into a particular survey.
 router.patch('/:question_id', controller.editQuestion) // Edits an existing question for a particular survey.
 router.delete('/:question_id', controller.deleteQuestion) // Delete an existing question by question_id.
+router.get('/trait_id/:trait_id', controller.getByTraitId) // Returns all questions and associated question data.
+
 
 
 module.exports = router
