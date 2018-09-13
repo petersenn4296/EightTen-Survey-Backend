@@ -10,7 +10,6 @@ function getOneQuestion(question_id) {
 }
 
 function addQuestion(survey_id, question, trait_id, type, nested_question=null) {
-  console.log('in here');
   return knex('questions')
     .insert({
     "survey_id": survey_id,
