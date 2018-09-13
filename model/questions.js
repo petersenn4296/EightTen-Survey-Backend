@@ -9,6 +9,11 @@ function getOneQuestion(question_id) {
     .where('id', question_id)
 }
 
+function getByTraitId(trait_id) {
+  return knex('questions')
+    .where('trait_id', trait_id)
+}
+
 function addQuestion(survey_id, question, trait_id, type, nested_question=null) {
   return knex('questions')
     .insert({
@@ -44,6 +49,7 @@ function deleteQuestion(question_id) {
 module.exports = {
   getAll,
   getOneQuestion,
+  getByTraitId,
   addQuestion,
   editQuestion,
   deleteQuestion

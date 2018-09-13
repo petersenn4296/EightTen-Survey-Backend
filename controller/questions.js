@@ -14,6 +14,13 @@ function getOneQuestion(req, res, next) {
     })
 }
 
+function getByTraitId(req, res, next) {
+  model.getByTraitId(req.params.trait_id)
+    .then(data => {
+      res.json(data)
+    })
+}
+
 function addQuestion(req, res, next) {
   console.log('here');
   model.addQuestion(req.body.survey_id, req.body.question, req.body.trait_id, req.body.type, req.body.nested_question)
@@ -39,6 +46,7 @@ function deleteQuestion(req, res, next) {
 module.exports = {
   getAll,
   getOneQuestion,
+  getByTraitId,
   addQuestion,
   editQuestion,
   deleteQuestion
