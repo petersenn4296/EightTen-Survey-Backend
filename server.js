@@ -8,7 +8,9 @@ let survey = require('./routes/survey')
 let questions = require('./routes/questions')
 let traits = require('./routes/traits')
 let login = require('./routes/login')
+let multiple_choice = require('./routes/multiple_choice')
 let client_response = require('./routes/client_response')
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -31,7 +33,7 @@ app.use('/questions', questions)
 app.use('/traits', traits)
 app.use('/login', login)
 app.use('/client_response', client_response)
-
+app.use('/multiple_choice', multiple_choice)
 
 let port = process.env.PORT || 3000
 

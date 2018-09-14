@@ -1,9 +1,13 @@
 const knex = require('../knex')
 
-function postResponse(client_id, question_id, answer) {
+function postResponse(client_id, question_id, answer, score) {
   return knex('client_response')
-    .insert({ "client_id": client_id, "question_id": question_id, "answer": answer })
+    .insert({ "client_id": client_id, "question_id": question_id, "answer": answer, "score": score })
     .returning('*')
 }
 
-module.exports = { postResponse }
+function getAll() {
+  return knex('client_response')
+}
+
+module.exports = { postResponse, getAll }
