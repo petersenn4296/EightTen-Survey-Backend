@@ -2,8 +2,8 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('users', function(table) {
     table.increments().notNullable()
-    table.string('email').notNullable().defaultTo('')
-    table.string('password').notNullable().defaultTo('')//hash
+    table.string('email').notNullable().unique()
+    table.string('password').notNullable()//hash
     table.string('first_name').notNullable().defaultTo('')
     table.string('last_name').notNullable().defaultTo('')
     table.bigInteger('tel', 12).notNullable().defaultTo(0)

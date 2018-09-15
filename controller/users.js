@@ -25,6 +25,13 @@ function getResults(req, res, next){
   })
 }
 
+function loadResults(req, res, next){
+  model.loadResults(req.params.id)
+    .then(data => {
+      res.json(data)
+    })
+}
+
 function isViewed(req, res, next){
   model.isViewed(req.params.id, req.body.is_viewed)
   .then(data => {
@@ -35,6 +42,7 @@ function isViewed(req, res, next){
 function signUp(req, res, next) {
   model.signUp(req.body.first_name, req.body.last_name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.password)
   .then(data => {
+    console.log('what is happening? idd it work?', data);
     res.json(data[0])
   })
 }
@@ -64,6 +72,7 @@ module.exports = {
   getAll,
   getOne,
   getResults,
+  loadResults,
   isViewed,
   signUp,
   // editOne,

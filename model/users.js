@@ -1,4 +1,5 @@
 const knex = require('../knex.js')
+const { hashSync } = require('bcryptjs')
 
 function getAll() {
   return knex('users')
@@ -21,6 +22,19 @@ function getResults(id){
     })
 }
 
+function loadResults(id){
+  return knex
+  .select('client_response.score', 'questions.trait_id')
+  .from('client_response')
+  .where('client_id', id)
+  .join('users', 'client_response.client_id', 'users.id')
+  .join('questions', 'client_response.question_id', 'questions.id')
+    .then((data) => {
+      console.log('loadResults data >>> ',data);
+      return data
+    })
+}
+
 function isViewed(id, view){
   return knex('users')
   .where('id', id)
@@ -29,8 +43,11 @@ function isViewed(id, view){
 
 
 function signUp(first_name, last_name, title, company_name, size, location, email, tel, password) {
+  console.log('model', password);
+  let hashWord = hashSync(password)
+  console.log('hashWord', hashWord);
   return knex('users')
-  .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": password})
+  .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": hashWord})
   .returning('*')
 }
 
@@ -63,6 +80,7 @@ module.exports = {
   getAll,
   getOne,
   getResults,
+  loadResults,
   isViewed,
   signUp,
   // editOne,
