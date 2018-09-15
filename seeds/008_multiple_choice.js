@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
     {question_id: 7, answer: 'We hold local hiring events', value: '6'},
     {question_id: 7, answer: 'We advertise on a diverse range of job boards', value: '8'},
     {question_id: 7, answer: 'Other', value: '5'},
-    {question_id: 8, answer: 'Promoting your job oppurtunities', value: '4'},
+    {question_id: 8, answer: 'Promoting your job opportunities', value: '4'},
     {question_id: 8, answer: 'Receiving applicants', value: '6'},
     {question_id: 8, answer: 'Developing community hiring partners', value: '8'},
     {question_id: 8, answer: 'Selecting the right candidates', value: '2'},
