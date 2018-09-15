@@ -9,7 +9,8 @@ const controller = require('../controller/users.js')
 
 router.get('/', controller.getAll)//get all users info
 router.get('/:id', controller.getOne)//get one user info
-router.get('/:id/responses', controller.getResults)//get results by user ID
+router.get('/:id/responses', controller.getResults)//get results by user ID (for admin)
+router.get('/:id/results', controller.loadResults)//load user side results data
 router.patch('/:id', controller.isViewed)
 router.post('/', controller.signUp)
 // router.patch('/:id', controller.editOne)
