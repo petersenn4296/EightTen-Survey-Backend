@@ -33,6 +33,7 @@ function signUp(first_name, last_name, title, company_name, size, location, emai
   .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": password})
   .returning('*')
 }
+
 //
 // function editOne(id, name, title, company_name, size, location, email, tel, pin) {
 //   return knex('client')
