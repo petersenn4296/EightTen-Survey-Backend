@@ -5,8 +5,12 @@ exports.seed = function(knex, Promise) {
     {client_id: 1, question_id: 1, score: 6, answer: 'Lunch and learns'},
     {client_id: 1, question_id: 2, score: 8, answer: 'Yes'},
     {client_id: 1, question_id: 3, score: 0, answer: 'text response text response text response'},
-    {client_id: 1, question_id: 4, score: 6, answer: '6'},
-    {client_id: 1, question_id: 5, score: 8, answer: 'Health and wellness'},
+    {client_id: 1, question_id: 10, score: 9, answer: '9'},
+    {client_id: 1, question_id: 11, score: 6, answer: 'Produces goods or services'},
+    {client_id: 1, question_id: 13, score: 8, answer: 'Yes'},
+    {client_id: 1, question_id: 16, score: 8, answer: 'We advertise on a diverse range of job boards'},
+    {client_id: 1, question_id: 17, score: 8, answer: 'eveloping community hiring partners'},
+    {client_id: 1, question_id: 18, score: 5, answer: 'Sexual Orientation'},
 
     //Thomas Applegate survey 1 answers
     {client_id: 2, question_id: 1, score: 2, answer: 'E-mail'},

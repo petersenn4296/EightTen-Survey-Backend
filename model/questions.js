@@ -47,7 +47,6 @@ function deleteQuestion(question_id) {
 }
 
 function getClientQuestions(client_id) {
-  console.log('model', client_id);
   return knex('client_response')
     .select('question_id')
     .where('client_id', client_id)
