@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
   return knex('users').insert([
     {
@@ -15,15 +14,54 @@ exports.seed = function(knex, Promise) {
       is_admin: false
     },
     {
-      email: 'donald.trump@america.com',
+      email: 'thomas.applegate@gmail.com',
       password: '$2a$10$JFrK.uJ1PuheLfyaiNV7aeUbzhATjgbLmDAr91LQIW5U.6slSPJyy',
-      first_name: 'Donald',
-      last_name: 'Trump',
+      first_name: 'Thomas',
+      last_name: 'Applegate',
       tel: 18599097651,
-      title: 'Head of the Head Guy',
-      company_name: 'United States',
-      size: 231,
-      location: 'Washington D.C.',
+      title: 'Head of HR',
+      company_name: 'Symbiotic',
+      size: 23,
+      location: 'Boulder, CO',
+      is_viewed: false,
+      is_admin: false
+    },
+    {
+      email: 'jenny.seagor@gmail.com',
+      password: '$2a$10$JFrK.uJ1PuheLfyaiNV7aeUbzhATjgbLmDAr91LQIW5U.6slSPJyy',
+      first_name: 'Jenny',
+      last_name: 'Seagor',
+      tel: 18599097652,
+      title: 'Head of HR + Hiring',
+      company_name: 'Fastrak',
+      size: 15,
+      location: 'Denver, CO',
+      is_viewed: false,
+      is_admin: false
+    },
+    {
+      email: 'tim.harris@gmail.com',
+      password: '$2a$10$JFrK.uJ1PuheLfyaiNV7aeUbzhATjgbLmDAr91LQIW5U.6slSPJyy',
+      first_name: 'Tim',
+      last_name: 'Harris',
+      tel: 18599097653,
+      title: 'Techinical Business Manager',
+      company_name: 'Avus Inc.',
+      size: 45,
+      location: 'Broomfield, CO',
+      is_viewed: false,
+      is_admin: false
+    },
+    {
+      email: 'rebecca.singer@gmail.com',
+      password: '$2a$10$JFrK.uJ1PuheLfyaiNV7aeUbzhATjgbLmDAr91LQIW5U.6slSPJyy',
+      first_name: 'Rebecca',
+      last_name: 'Singer',
+      tel: 18599097654,
+      title: 'Recruiting Manager',
+      company_name: 'Shilling CO.',
+      size: 15,
+      location: 'Littleton, CO',
       is_viewed: false,
       is_admin: false
     },
