@@ -30,7 +30,6 @@ function loadResults(id){
   .join('users', 'client_response.client_id', 'users.id')
   .join('questions', 'client_response.question_id', 'questions.id')
     .then((data) => {
-      console.log('loadResults data >>> ',data);
       return data
     })
 }
@@ -43,9 +42,7 @@ function isViewed(id, view){
 
 
 function signUp(first_name, last_name, title, company_name, size, location, email, tel, password) {
-  console.log('model', password);
   let hashWord = hashSync(password)
-  console.log('hashWord', hashWord);
   return knex('users')
   .insert({"first_name": first_name, "last_name": last_name, "title": title, "company_name": company_name, "size": size, "location": location, "email": email, "tel": tel, "password": hashWord})
   .returning('*')

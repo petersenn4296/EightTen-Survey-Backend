@@ -18,7 +18,6 @@ function logIn(email, password) {
           is_admin: result[0].is_admin,
           company_name: result[0].company_name
         }
-        console.log('user in model', user);
         response = user
       } else {
         errorMessage = 'Incorrect username or password.'
