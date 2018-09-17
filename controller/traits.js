@@ -7,6 +7,13 @@ function getAll(req, res, next) {
   })
 }
 
+function getOne(req, res, next) {
+  model.getOne(req.params.trait_id)
+  .then(data => {
+    res.json(data)
+  })
+}
+
 function editOne(req, res, next) {
   model.editOne(req.params.trait_id, req.body.response, req.body.trait_id)
   .then((data) => {
@@ -19,5 +26,6 @@ function editOne(req, res, next) {
 
 module.exports = {
   getAll,
+  getOne,
   editOne
 }
