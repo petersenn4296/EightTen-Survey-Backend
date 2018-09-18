@@ -24,7 +24,7 @@ function getByTraitId(req, res, next) {
 function addQuestion(req, res, next) {
   model.addQuestion(req.body.survey_id, req.body.question, req.body.trait_id, req.body.type, req.body.nested_question)
     .then(data => {
-      res.json(data[0].id)
+      res.json(data)
     })
 }
 
@@ -43,7 +43,6 @@ function deleteQuestion(req, res, next) {
 }
 
 function getClientQuestions(req, res, next) {
-  console.log('controller', req.params);
   model.getClientQuestions(req.params.client_id)
     .then(data => {
       res.json(data)

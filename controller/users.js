@@ -42,31 +42,9 @@ function isViewed(req, res, next){
 function signUp(req, res, next) {
   model.signUp(req.body.first_name, req.body.last_name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.password)
   .then(data => {
-    console.log('what is happening? idd it work?', data);
     res.json(data[0])
   })
 }
-//
-// function editOne(req, res, next) {
-//   console.log('req body id', req.body.id);
-//   model.editOne(req.params.id, req.body.name, req.body.title, req.body.company_name, req.body.size, req.body.location, req.body.email, req.body.tel, req.body.pin)
-//   .then((data) => {
-//     res.send(data[0])
-//   })
-//   .catch((err) => {
-//     next(err)
-//   })
-// }
-//
-// function deleteOne(req, res, next) {
-//   model.deleteOne(req.params.id)
-//   .then((data) => {
-//     res.send(data[0])
-//   })
-//   .catch((err) => {
-//     next(err)
-//   })
-// }
 
 module.exports = {
   getAll,
@@ -74,7 +52,5 @@ module.exports = {
   getResults,
   loadResults,
   isViewed,
-  signUp,
-  // editOne,
-  // deleteOne
+  signUp
 }

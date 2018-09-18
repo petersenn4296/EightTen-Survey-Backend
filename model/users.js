@@ -48,38 +48,11 @@ function signUp(first_name, last_name, title, company_name, size, location, emai
   .returning('*')
 }
 
-//
-// function editOne(id, name, title, company_name, size, location, email, tel, pin) {
-//   return knex('client')
-//   .where('id', id)
-//   .limit(1)
-//   .update({
-//     "name": name,
-//     "title": title,
-//     "company_name": company_name,
-//     "size": size,
-//     "location": location,
-//     "email": email,
-//     "tel": tel,
-//     "pin": pin
-//   })
-//   .returning('*')
-// }
-//
-// function deleteOne(id) {
-//   return knex('client')
-//     .where('id', id)
-//     .del()
-//     .returning('*')
-// }
-
 module.exports = {
   getAll,
   getOne,
   getResults,
   loadResults,
   isViewed,
-  signUp,
-  // editOne,
-  // deleteOne
+  signUp
 }
