@@ -1,13 +1,13 @@
 exports.seed = function(knex, Promise) {
   return knex('users').insert([
     {
-      email: 'bill.gates@microsoft.com',
+      email: 'galv@gmail.com',
       password: '$2a$10$Ia4yyN7o8.ti02ggHqepYuIxtsH7vkHnTOEBvCccbXYDWn5V.9iKC',
       first_name: 'Bill',
       last_name: 'Gates',
       tel: 13033456578,
       title: 'Head Guy',
-      company_name: 'Microsoft',
+      company_name: 'Galvanize',
       size: 345,
       location: 'Seattle, Washington',
       is_viewed: false,
